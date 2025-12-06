@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our online courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Скомпилированный CSS -->
+  <link rel="stylesheet" href="scss/styles.css">
+</head>
+<body class="page">
+
+  <main class="page__main">
+    <section class="courses">
+      <div class="courses__inner">
+
+        <header class="courses__header">
+          <p class="courses__eyebrow">Enjoy your studying!</p>
+          <h1 class="courses__title">Our online courses</h1>
+        </header>
+
+        <div class="courses__controls">
+          <div class="courses__tabs" role="tablist" aria-label="Filter courses by category">
+            <button class="courses__tab courses__tab--active"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    data-category="all">
+              All
+            </button>
+            <button class="courses__tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-category="marketing">
+              Marketing
+            </button>
+            <button class="courses__tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-category="management">
+              Management
+            </button>
+            <button class="courses__tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-category="hr">
+              HR &amp; Recruiting
+            </button>
+            <button class="courses__tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-category="design">
+              Design
+            </button>
+            <button class="courses__tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-category="development">
+              Development
+            </button>
+          </div>
+
+          <form class="courses__search" role="search" aria-label="Search courses by title">
+            <label class="courses__search-label">
+              <span class="visually-hidden">Search course</span>
+              <input
+                class="courses__search-input"
+                type="search"
+                name="query"
+                autocomplete="off"
+                placeholder="Search course..."
+              >
+              <span class="courses__search-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                  <line x1="10.5" y1="10.5" x2="15" y2="15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </label>
+          </form>
+        </div>
+
+        <!-- сюда JS рендерит карточки -->
+        <div class="courses__grid" id="coursesGrid"></div>
+
+        <!-- шаблон одной карточки -->
+        <template id="courseCardTemplate">
+          <article class="course-card">
+            <div class="course-card__image">
+              <img src="" alt="" class="course-card__img">
+            </div>
+            <div class="course-card__body">
+              <span class="course-card__badge"></span>
+              <h2 class="course-card__title"></h2>
+              <div class="course-card__meta">
+                <span class="course-card__price"></span>
+                <span class="course-card__divider">|</span>
+                <span class="course-card__author"></span>
+              </div>
+            </div>
+          </article>
+        </template>
+
+        <div class="courses__more-wrapper">
+          <button class="courses__more" type="button">
+            Load more
+          </button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
